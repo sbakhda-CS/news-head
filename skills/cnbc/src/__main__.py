@@ -11,7 +11,7 @@ def main(params):
     n = msg.payload.get('n')
 
     # get api token from properties
-    api = msg.properties
+    api = msg.properties.get('token')
 
     # get the top headlines using the news api
     top_head = news(source.lower(), n, api)
