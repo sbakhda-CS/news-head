@@ -1,0 +1,10 @@
+{
+  "@c12e/generator-cortex": {
+    "promptValues": {
+      "projectName": "news_head",
+      "projectPrefix": "nh"
+    },
+    "projectName": "news_head",
+    "projectPrefix": "nh"
+  }
+}

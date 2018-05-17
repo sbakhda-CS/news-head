@@ -1,0 +1,50 @@
+camel: 1.0.0
+name: nh/headline
+title: Headlines
+description: Gives the top N articles for CNN and CNBC
+properties:
+  - name: token
+    title: API token
+    description: Api token
+    type: string
+    defaultValue: d641992dd1f544d28409176c74802ac4
+inputs:
+  - name: input
+    title: input
+    parameters:
+      - name: source
+        type: string
+        title: News Source
+        description: News source
+        required: true
+      - name: n
+        title: number of articles
+        type: integer
+        description: number of top articles
+        required: false
+        default: 5
+    routing:
+      field: source
+      default:
+        action: nh/headline
+        output: output
+      rules:
+        - match: cnn
+          action: nh/cnn
+          output: output
+        - match: cnbc
+          action: nh/cnbc
+          output: output
+outputs:
+  - name: output
+    title: output
+    parameters:
+      - name: route
+        type: string
+        description: which route
+        required: true
+      - name: top_head
+        type: array
+        description: Results of the top headlines
+        required: true
+
