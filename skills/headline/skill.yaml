@@ -1,13 +1,26 @@
+# camel version
 camel: 1.0.0
-name: nh/headline
-title: Headlines
+
+# Remember: __main__.py runs when
+#   the function is a path
+
+
+# skill metadata
+name: nh/headline # namespace/function
+title: Headlines # Human-friendly name
 description: Gives the top N articles for CNN and CNBC
+
+
+# skill properties
 properties:
   - name: token
     title: API token
     description: Api token
     type: string
-    defaultValue: d641992dd1f544d28409176c74802ac4
+    defaultValue: c474c16b92274c538f647d92387b00c7
+
+
+# skill inputs
 inputs:
   - name: input
     title: input
@@ -29,11 +42,14 @@ inputs:
         output: output
       rules:
         - match: cnn
-          action: nh/cnn
+          action: nh/cnn # what to execute
           output: output
         - match: cnbc
           action: nh/cnbc
           output: output
+
+
+# skill outputs
 outputs:
   - name: output
     title: output
@@ -45,5 +61,9 @@ outputs:
       - name: top_head
         type: array
         description: Results of the top headlines
+        required: true
+      - name: api
+        type: object
+        description: api key used
         required: true
 
