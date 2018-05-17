@@ -21,8 +21,7 @@ inputs:
         title: number of articles
         type: integer
         description: number of top articles
-        required: false
-        default: 5
+        required: true
     routing:
       field: source
       default:
