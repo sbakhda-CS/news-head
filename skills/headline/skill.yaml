@@ -63,7 +63,7 @@ outputs:
         description: Results of the top headlines
         required: true
       - name: api
-        type: object
+        type: string
         description: api key used
         required: true
 
